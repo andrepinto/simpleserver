@@ -33,7 +33,7 @@ project {
 # An Docker
 docker "build" {
   dockerfile  = "Dockerfile.build"
-  path        = "."
+  path        = "$NVY_VAR{sys_workspace}"
   tag         = "$NVY_VAR{project-tag-build}"
   no_cache     = "false"
 }
@@ -48,7 +48,7 @@ docker "run" {
 
 docker "build" {
   dockerfile  = "Dockerfile.dist"
-  path        = "."
+  path        = "$NVY_VAR{sys_workspace}"
   tag         = "$NVY_VAR{project-tag}"
   no_cache     = "false"
 }
