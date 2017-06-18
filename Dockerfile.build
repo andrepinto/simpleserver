@@ -1,0 +1,23 @@
+FROM golang:1.8
+
+RUN apt-get update
+RUN apt-get install curl --yes
+
+
+
+RUN curl https://glide.sh/get | sh
+
+RUN mkdir -p $GOPATH/src/github.com/andrepinto/simpleserver
+
+VOLUME  $GOPATH/src/github.com/andrepinto/simpleserver/bin
+
+COPY . $GOPATH/src/github.com/andrepinto/simpleserver
+
+WORKDIR $GOPATH/src/github.com/andrepinto/simpleserver
+
+RUN make bundle
+
+#RUN GOOS=linux GOARCH=amd64 go build -ldflags="-s -w -X main.Version=1" -o bin/server main.go
+
+
+#tar -C bin -czf - server

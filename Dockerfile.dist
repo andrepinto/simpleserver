@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+RUN mkdir -p /app/
+
+COPY bin/server /app
+
+EXPOSE 3001
+
+WORKDIR /app
+
+CMD ./server
