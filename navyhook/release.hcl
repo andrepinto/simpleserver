@@ -30,6 +30,10 @@ project {
   name = "$NVY_VAR{project-name}"
 }
 
+plugin "demo" "callservice"{
+  "endpoint" = "aaaa"
+}
+
 # An Docker
 docker "build" {
   dockerfile  = "Dockerfile.build"
