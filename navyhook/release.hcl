@@ -31,7 +31,7 @@ project {
 }
 
 plugin "demo" "callservice"{
-  "endpoint" = "aaaa"
+  "endpoint" = "https://requestb.in/1gs3rf11"
 }
 
 # An Docker
