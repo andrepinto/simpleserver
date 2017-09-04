@@ -31,7 +31,7 @@ project {
 }
 
 plugin "filesystem" "writefile"{
-  "path" = "/Users/andrepinto/workspace/go/src/github.com/andrepinto/navyhook"
+  "path" = "/Users/andrepinto/workspace/go/src/github.com/andrepinto/navyhook/demo.txt"
 }
 
 # An Docker
