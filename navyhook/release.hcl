@@ -30,8 +30,8 @@ project {
   name = "$NVY_VAR{project-name}"
 }
 
-plugin "demo" "callservice"{
-  "endpoint" = "https://requestb.in/1gs3rf11"
+plugin "filesystem" "writefile"{
+  "path" = "/Users/andrepinto/workspace/go/src/github.com/andrepinto/navyhook"
 }
 
 # An Docker
