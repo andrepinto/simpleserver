@@ -25,14 +25,6 @@ variable "project-tag-build"{
 variable "push-tag"{
   value = "$NVY_VAR{project-org}/$NVY_VAR{project-tag}"
 }
-# An Project
-project {
-  name = "$NVY_VAR{project-name}"
-}
-
-plugin "filesystem" "writefile"{
-  "path" = "/Users/andrepinto/workspace/go/src/github.com/andrepinto/navyhook/demo.txt"
-}
 
 # An Docker
 docker "build" {
