@@ -31,6 +31,10 @@ docker "run" {
   #volume_binds = ["$NVY_VAR{sys_workspace}/bin:/go/src/github.com/andrepinto/simpleserver/bin"]
 }
 
+docker "rm"{
+  container =  "$NVY_VAR{project-build-name}"
+}
+
 docker "rmi"{
   name =  "$NVY_VAR{project-tag-build}"
 }
