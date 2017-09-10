@@ -1,5 +1,3 @@
-/* A multi
-   line comment. */
 # An Var
 variable "project-org"{
   value = "andrepinto"
@@ -34,7 +32,7 @@ docker "build" {
   no_cache     = "false"
 }
 
-
+/*
 docker "run" {
   name        = "$NVY_VAR{project-tag-build}"
   image       = "$NVY_VAR{project-tag-build}"
@@ -56,3 +54,4 @@ docker "rm"{
 docker "rmi"{
   name =  "$NVY_VAR{project-tag-build}"
 }
+*/
