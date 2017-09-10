@@ -1,27 +1,14 @@
 # An Var
-variable "project-org"{
-  value = "andrepinto"
-}
-# An Var
-variable "project-name"{
-  value = "simpleserver"
-}
-# An Var
-variable "project-version"{
-  value = "v2.2.1"
-}
-
-# An Var
 variable "project-tag"{
   value = "$NVY_VAR{project-name}:$NVY_VAR{project-version}"
 }
 
 variable "project-tag-build"{
-  value = "build-$NVY_VAR{project-name}"
+  value = "build-$NVY_VAR{project-name}:$NVY_VAR{project-version}"
 }
 
 variable "push-tag"{
-  value = "$NVY_VAR{project-org}/$NVY_VAR{project-tag}"
+  value = "$NVY_VAR{project-namespace}/$NVY_VAR{project-tag}"
 }
 
 # An Docker
