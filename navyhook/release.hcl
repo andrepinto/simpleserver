@@ -1,10 +1,10 @@
 # An Var
 variable "project-tag"{
-  value = "$NVY_VAR{repo.namespace}/$NVY_VAR{navy.project}:$NVY_VAR{repo.tag}"
+  value = "$NVY_VAR{repo.namespace}/$NVY_VAR{repo.name}:$NVY_VAR{repo.tag}"
 }
 
 variable "project-build-name"{
-  value = "build-$NVY_VAR{navy.project}-$NVY_VAR{repo.tag}"
+  value = "build-$NVY_VAR{repo.name}-$NVY_VAR{repo.tag}"
 }
 
 variable "project-tag-build"{
@@ -49,6 +49,10 @@ docker "push"{
   image =  "$NVY_VAR{project-tag}"
   username = "$NVY_VAR{ecr.username}"
   password = "$NVY_VAR{ecr.password}"
+}
+
+docker "rmi"{
+  name =  "$NVY_VAR{project-tag}"
 }
 
 /*
