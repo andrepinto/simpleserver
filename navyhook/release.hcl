@@ -55,6 +55,14 @@ docker "rmi"{
   name =  "$NVY_VAR{project-tag}"
 }
 
+plugin "helm-navy" "build"{
+  path = "$NVY_VAR{sys_workspace}/navyhook/chart/$NVY_VAR{repo.name}"
+  destination ="$NVY_VAR{sys_workspace}"
+  repository = "http://localhost:8000/charts/upload/"
+  image = "$NVY_VAR{repo.namespace}/$NVY_VAR{repo.name}"
+  tag = "$NVY_VAR{repo.tag}"
+}
+
 /*
 docker "run" {
   name        = "$NVY_VAR{project-tag-build}"
