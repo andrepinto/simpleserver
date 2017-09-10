@@ -4,7 +4,7 @@ variable "project-tag"{
 }
 
 variable "project-build-name"{
-  value = "build-$NVY_VAR{navy.project}"
+  value = "build-$NVY_VAR{navy.project}-$NVY_VAR{repo.tag}"
 }
 
 variable "project-tag-build"{
