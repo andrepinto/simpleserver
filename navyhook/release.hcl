@@ -11,7 +11,6 @@ variable "project-tag-build"{
   value = "build-$NVY_VAR{project-tag}"
 }
 
-
 variable "push-tag"{
   value = "$NVY_VAR{repo.namespace}/$NVY_VAR{project-tag}"
 }
@@ -37,6 +36,13 @@ docker "rm"{
 
 docker "rmi"{
   name =  "$NVY_VAR{project-tag-build}"
+}
+
+docker "build" {
+  dockerfile  = "Dockerfile.dist"
+  path        = "$NVY_VAR{sys_workspace}"
+  tag         = "$NVY_VAR{project-tag}"
+  no_cache     = "false"
 }
 
 /*
