@@ -19,6 +19,10 @@ docker "build" {
   no_cache     = "false"
 }
 
+docker "rmi"{
+  name =  "$NVY_VAR{project-tag-build}"
+}
+
 /*
 docker "run" {
   name        = "$NVY_VAR{project-tag-build}"
