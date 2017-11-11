@@ -30,7 +30,7 @@ docker "run" {
   name        = "$NVY_VAR{project-build-name}"
   image       = "$NVY_VAR{project-tag-build}"
   cmd         = ["env", "GOOS=linux", "GOARCH=amd64", "go", "build", "-o", "bin/server", "main.go"]
-  volume_binds = ["$NVY_VAR{sys_workspace}/bin:/go/src/github.com/andrepinto/simpleserver/bin"]
+  volume_binds = ["$NVY_VAR{out_workspace}/bin:/go/src/github.com/andrepinto/simpleserver/bin"]
 }
 
 # Remove build container
